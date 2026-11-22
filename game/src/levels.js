@@ -12,7 +12,7 @@ export const LEVELS = [
     name: 'The Gallery',
     subtitle: 'Room 1 of 3 — lift the Star of Marlow',
     playerStart: { x: 70, y: 530 },
-    exit: { x: 880, y: 520, w: 56, h: 56 },
+    exit: { x: 856, y: 512, w: 56, h: 56 },
     star: { x: 480, y: 92 },
     coins: [
       { x: 200, y: 150 }, { x: 760, y: 150 }, { x: 120, y: 330 },
@@ -66,7 +66,7 @@ export const LEVELS = [
     name: 'The Vault Wing',
     subtitle: 'Room 2 of 3 — three guards, two cameras, no easy line',
     playerStart: { x: 70, y: 70 },
-    exit: { x: 880, y: 70, w: 56, h: 56 },
+    exit: { x: 856, y: 64, w: 56, h: 56 },
     star: { x: 480, y: 510 },
     coins: [
       { x: 200, y: 300 }, { x: 760, y: 300 }, { x: 480, y: 150 },
@@ -129,7 +129,7 @@ export const LEVELS = [
     name: 'The Rooftop Getaway',
     subtitle: 'Room 3 of 3 — grab the ledger, reach the skylight',
     playerStart: { x: 70, y: 530 },
-    exit: { x: 880, y: 80, w: 56, h: 56 },
+    exit: { x: 856, y: 72, w: 56, h: 56 },
     star: { x: 480, y: 300 },
     coins: [
       { x: 200, y: 120 }, { x: 760, y: 480 }, { x: 120, y: 300 },

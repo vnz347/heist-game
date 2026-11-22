@@ -321,7 +321,8 @@ function draw() {
 function stageShot(name) {
   game.frozen = true;
   loadLevel(0);
-  game.mode = 'playing';
+  // Hide every overlay (the title shows by default in the HTML).
+  setMode('playing');
   const player = game.player;
 
   if (name === 'cover') {

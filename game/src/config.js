@@ -14,6 +14,7 @@ export const CONFIG = {
   guardPatrolSpeed: 62,
   guardChaseSpeed: 118,
   guardSearchSpeed: 80,
+  guardReactionSeconds: 0.45, // the "!" beat: a guard that spots the thief
   guardVisionRange: 195,
   guardVisionHalfAngle: 0.62, // radians, ~35 degrees each side
   guardHearingRadius: 170,

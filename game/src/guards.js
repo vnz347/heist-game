@@ -109,7 +109,11 @@ export function updateGuard(guard, dt, now, player, walls, onHeardCoin) {
     }
     case 'alert': {
       if (sight.seen) {
-        moveToward(guard, player.x, player.y, CONFIG.guardChaseSpeed, dt, walls);
+        // The "!" beat: a guard that just spotted the thief freezes for a
+        // moment before giving chase, so a near miss is always escapable.
+        if (guard.stateTime >= CONFIG.guardReactionSeconds) {
+          moveToward(guard, player.x, player.y, CONFIG.guardChaseSpeed, dt, walls);
+        }
       } else {
         // Lost sight: search where the thief was last seen.
         guard.state = 'search';
