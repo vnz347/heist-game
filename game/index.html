@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Velvet Vault — a museum heist game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="frame">
+    <header class="titlebar">
+      <h1>The Velvet Vault</h1>
+      <p class="tagline">One thief. Three rooms. The Star of Marlow.</p>
+    </header>
+
+    <section class="hud" aria-label="Heist status">
+      <div class="hud-left">
+        <span id="hud-level">Room 1 / 3 — The Gallery</span>
+        <span id="hud-loot" class="loot">$0</span>
+      </div>
+      <div class="hud-alarm">
+        <span class="alarm-caption">ALARM</span>
+        <div class="alarm-bar"><div id="hud-alarm-fill"></div></div>
+        <span id="hud-alarm-label">Hidden</span>
+      </div>
+      <div class="hud-right">
+        <span id="hud-time">00:00</span>
+        <span id="hud-smoke">Smoke ×2</span>
+        <span id="hud-coins">Coins ×3</span>
+      </div>
+    </section>
+    <p id="hud-objective" class="objective">Objective: steal the Star of Marlow, then reach the EXIT.</p>
+
+    <div class="stage">
+      <canvas id="game-canvas" width="960" height="600"></canvas>
+      <div id="hud-banner" class="banner"></div>
+
+      <div id="overlay-title" class="overlay visible">
+        <h2>The Velvet Vault</h2>
+        <p>You are <strong>Vesper</strong>, thief of the velvet hour. The Marlow Museum
+        closes at midnight — and the Star of Marlow is still on its pedestal.</p>
+        <p>Cross three rooms, lift the Star, and slip out the skylight.
+        Guards walk patrols, cameras sweep, and the alarm fills while any
+        eye is on you. Break line of sight and it drains.</p>
+        <ul>
+          <li><strong>WASD / arrows</strong> move · <strong>Shift</strong> sneak · <strong>click</strong> walk to a spot</li>
+          <li><strong>Q</strong> smoke puff (×2 a room) — blinds guards and cameras</li>
+          <li><strong>E</strong> toss a coin — a nearby guard goes to look</li>
+          <li><strong>P</strong> pause · <strong>R</strong> restart room · <strong>M</strong> sound</li>
+        </ul>
+        <button id="start-button" class="big-button">Begin the heist</button>
+      </div>
+
+      <div id="overlay-paused" class="overlay">
+        <h2>Paused</h2>
+        <p>The museum holds its breath.</p>
+        <button id="resume-button" class="big-button">Resume</button>
+      </div>
+
+      <div id="overlay-caught" class="overlay">
+        <h2>Caught!</h2>
+        <p id="caught-detail">The guards closed the net.</p>
+        <p>Tip: sneak through the dark blue shadows, toss a coin to pull a
+        guard away, and never let the alarm sit at 100.</p>
+        <button id="retry-button" class="big-button">Try the room again</button>
+      </div>
+
+      <div id="overlay-clear" class="overlay">
+        <h2>Room cleared</h2>
+        <p id="clear-detail"></p>
+        <button id="next-button" class="big-button">Next room</button>
+      </div>
+
+      <div id="overlay-won" class="overlay">
+        <h2>The getaway!</h2>
+        <p id="won-detail"></p>
+        <p>You vanished into the night with the Star of Marlow.</p>
+        <button id="again-button" class="big-button">Steal it again</button>
+      </div>
+    </div>
+
+    <footer class="controls">
+      <span><strong>WASD</strong> move</span>
+      <span><strong>Shift</strong> sneak</span>
+      <span><strong>Q</strong> smoke</span>
+      <span><strong>E</strong> coin toss</span>
+      <span><strong>P</strong> pause</span>
+      <span><strong>R</strong> restart</span>
+      <button id="mute-button" class="small-button">Sound: on (M)</button>
+    </footer>
+  </main>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
